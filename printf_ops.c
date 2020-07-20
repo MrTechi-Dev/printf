@@ -24,7 +24,7 @@ int printfstring(va_list str)
 	ptr = va_arg(str, char *);
 	if (ptr == NULL)
 		ptr = "(null)";
-	for (i = 0; ptr[i] != '\0'; i ++)
+	for (i = 0; ptr[i] != '\0'; i++)
 	{
 		_putchar(ptr[i]);
 	}
