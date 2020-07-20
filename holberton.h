@@ -12,14 +12,14 @@
 typedef struct op
 {
 	char *data;
-	int (*func)(va_list, int b);
+	int (*func)(va_list);
 } data_t;
 
 int _putchar(char c);
-int printfchar(va_list, int count);
-int printfstring(va_list, int count);
+int printfchar(va_list);
+int printfstring(va_list);
 int _printf(const char *format, ...);
 int printf_valid(const char *format);
-int (*printf_struct(char s))(va_list, int);
+int (*printf_struct(char s))(va_list);
 
 #endif

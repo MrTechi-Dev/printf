@@ -6,7 +6,7 @@
  * @s: Is char after the symbol "%"
  * Return: the data to the function to process
  */
-int (*printf_struct(char s))(va_list, int)
+int (*printf_struct(char s))(va_list)
 {
 	data_t ops[] = {
 		{"c", printfchar},
