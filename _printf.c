@@ -9,10 +9,10 @@ int _printf(const char *format, ...)
 {
 	int i;
 	int count = 0;
-	int *(ptr)(va_list, int);
+	int (*ptr)(va_list, int);
 	va_list valist;
 
-	if (!printf_valid(format) || (format == NULL))
+	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
 	va_start(valist, format);
 	for (i = 0; format[i] != '\0';  i++, count++)
@@ -27,12 +27,13 @@ int _printf(const char *format, ...)
 				++i;
 			}
 			else
+			{
 				ptr = printf_struct(format[i + 1]);
-				++i;
 				if (ptr)
 				{
 					count = ptr(valist, count);
 					--count;
+					++i;
 				}
 				else
 					_putchar(format[i]);
