@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i;
 	int count = 0;
+	int *(ptr)(va_list, int);
 	va_list valist;
 
 	if (!printf_valid(format) || (format == NULL))
@@ -16,19 +17,27 @@ int _printf(const char *format, ...)
 	va_start(valist, format);
 	for (i = 0; format[i] != '\0';  i++, count++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+			_putchar(format[i]);
+		else
 		{
-			++i;
-			if (format[i] != '%')
+			if (format[i + 1] == '%')
 			{
-				--count;
-				count = printf_struct(format[i])(valist, count);
+				_putchar('%');
+				++i;
 			}
 			else
-				_putchar(format[i]);
+				ptr = printf_struct(format[i + 1]);
+				++i;
+				if (ptr)
+				{
+					count = ptr(valist, count);
+					--count;
+				}
+				else
+					_putchar(format[i]);
+			}
 		}
-		else
-			_putchar(format[i]);
 	}
 	va_end(valist);
 	return (count);
