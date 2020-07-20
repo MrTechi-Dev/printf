@@ -5,8 +5,8 @@
 #include <stdarg.h>
 /**
  * struct op - shows which function corresponds to the letter.
- * @data - char that indicates the type of data to print.
- * @func - pointer to function that print the data.
+ * @data: char that indicates the type of data to print.
+ * @func: pointer to function that print the data.
  */
 
 typedef struct op
