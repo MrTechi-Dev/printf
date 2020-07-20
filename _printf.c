@@ -33,7 +33,6 @@ int _printf(const char *format, ...)
 				if (ptr)
 				{
 					count += ptr(valist);
-					--count;
 					++i;
 					aux++;
 				}
