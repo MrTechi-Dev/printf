@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * printfchar - It will print the character in the _printf.c
+ * @c:is the charactaer passed from the main file
+ * @count: The count number iteration in the function
+ * Return: The number of characters
  */
 
 int printfchar(va_list c, int count)
@@ -11,6 +11,12 @@ int printfchar(va_list c, int count)
 	_putchar(va_arg(c, int));
 	return (++count);
 }
+/**
+ * printfstring - It will print the string in the _printf.c function
+ * @str: is the string passed from the main file
+ * @count: The count number iteration in the function
+ * Return: The number of characters
+ */
 
 int printfstring(va_list str, int count)
 {
