@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int i;
 	int count = 0;
 	int aux = 0;
-	int (*ptr)(va_list);
+	int (*ptr)(va_list, int);
 	va_list valist;
 
 	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				ptr = printf_struct(format[i + 1]);
 				if (ptr)
 				{
-					count += ptr(valist);
+					count += ptr(valist, count);
 					++i;
 					aux++;
 				}
