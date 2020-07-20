@@ -9,22 +9,21 @@ int _printf(const char *format, ...)
 {
 	int i;
 	int count = 0;
-	int aux = 0;
 	int (*ptr)(va_list, int);
 	va_list valist;
 
 	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
 	va_start(valist, format);
-	for (i = 0; format[i] != '\0';  i++, count++)
+	for (i = 0; format[i] != '\0';  i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			count += _putchar(format[i]);
 		else
 		{
 			if (format[i + 1] == '%')
 			{
-				_putchar('%');
+				count += _putchar('%');
 				++i;
 			}
 			else
@@ -32,12 +31,14 @@ int _printf(const char *format, ...)
 				ptr = printf_struct(format[i + 1]);
 				if (ptr)
 				{
-					count += ptr(valist, count);
-					++i;
-					aux++;
+				
+					count = ptr(valist, count);
+					i++;
 				}
-				if (aux == 0)
-					_putchar(format[i]);
+				else
+				{
+					count += _putchar(format[i]);
+				}
 			}
 		}
 	}

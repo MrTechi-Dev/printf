@@ -9,8 +9,7 @@
 int printfchar(va_list c, int count)
 {
 	_putchar(va_arg(c, int));
-	count++;
-	return (count);
+	return (++count);
 }
 /**
  * printfstring - It will print the string in the _printf.c function
@@ -31,5 +30,5 @@ int printfstring(va_list str, int count)
 	{
 		_putchar(ptr[i]);
 	}
-	return (--count);
+	return (count);
 }
