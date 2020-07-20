@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * printf_valid - validates if the syntax is ok.
+ * @format: pointer to char to validate.
+ * Return: 1 if the syntax is ok else 0.
  */
+
 int printf_valid(const char *format)
 {
 	int i;
