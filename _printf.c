@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 				ptr = printf_struct(format[i + 1]);
 				if (ptr)
 				{
-				
 					count = ptr(valist, count);
 					i++;
 				}
