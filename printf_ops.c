@@ -68,10 +68,10 @@ int intrecursion(unsigned int n)
 
 /**
  * func_rot13 - print string encode in rot13
- * @args: parameters passed in the value replacement
+ * @args: parameters passed in the value  to replace
  * Return: number of characters printed
 */
-int func_rot13(va_list args)
+int printrot13(va_list args)
 {
 	int i = 0;
 	int j = 0;

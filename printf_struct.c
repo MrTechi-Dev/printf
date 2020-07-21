@@ -13,7 +13,7 @@ int (*printf_struct(char s))(va_list, int)
 		{"s", printfstring},
 		{"i", printfint},
 		{"d", printfint},
-		{"R", func_rot13},
+		{"R", printrot13},
 		{NULL, NULL}
 	};
 
