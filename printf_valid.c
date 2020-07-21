@@ -4,7 +4,6 @@
  * @format: pointer to char to validate.
  * Return: 1 if the syntax is ok else 0.
  */
-
 int printf_valid(const char *format)
 {
 	int i;

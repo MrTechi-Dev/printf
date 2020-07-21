@@ -5,7 +5,6 @@
  * @count: Is the number iterated in the function.
  * Return: The number of characters
  */
-
 int printfchar(va_list c, int count)
 {
 	_putchar(va_arg(c, int));
@@ -17,7 +16,6 @@ int printfchar(va_list c, int count)
  * @count: Is the number iterated in the function.
  * Return: The number of characters
  */
-
 int printfstring(va_list str, int count)
 {
 	int i;
