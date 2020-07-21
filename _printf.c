@@ -13,16 +13,13 @@ int _printf(const char *format, ...)
 	char *aux = (char *)format;
 	va_list valist;
 
-	if ((format[0] == '%' && format[1] == '\0')
-		|| format == NULL)
+	if (!printf_valid(format) || format == NULL)
 		return (-1);
 	va_start(valist, format);
 	for (i = 0; format[i] != '\0';  i++, aux++)
 	{
 		if (format[i] != '%')
-		{
 			count += write(1, aux, 1);
-		}
 		else
 		{
 			if (format[i + 1] == '%')
@@ -41,9 +38,7 @@ int _printf(const char *format, ...)
 					i++;
 				}
 				else
-				{
 					count += write(1, aux, 1);
-				}
 			}
 		}
 	}

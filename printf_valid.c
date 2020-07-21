@@ -12,6 +12,8 @@ int printf_valid(const char *format)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (0);
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			while (format[i + 1] == '%')
@@ -19,7 +21,7 @@ int printf_valid(const char *format)
 				counter++;
 				i++;
 			}
-			if (printf_struct(format[i + 1]) && counter % 2 == 0)
+			if (counter % 2 != 0 && format[i + 1] == '\0')
 				return (0);
 		}
 	}
