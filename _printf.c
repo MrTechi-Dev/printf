@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _printf - Is our own _printf version that will
- * print any given input
+ * print any given input accordinf to the data structure
  * @format: The format of the printf
  * Return: The number of the character to be print
  */
