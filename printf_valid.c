@@ -19,7 +19,7 @@ int printf_valid(const char *format)
 				counter++;
 				i++;
 			}
-			if (printf_struct(format[i + 1]))
+			if (printf_struct(format[i + 1]) && counter % 2 == 0)
 				return (0);
 		}
 	}
