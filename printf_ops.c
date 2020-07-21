@@ -5,6 +5,7 @@
  * @count: Is the number iterated in the function.
  * Return: The number of characters
  */
+
 int printfchar(va_list c, int count)
 {
 	_putchar(va_arg(c, int));
@@ -16,6 +17,7 @@ int printfchar(va_list c, int count)
  * @count: Is the number iterated in the function.
  * Return: The number of characters
  */
+
 int printfstring(va_list str, int count)
 {
 	int i;
@@ -34,6 +36,7 @@ int printfstring(va_list str, int count)
  * @count: Is the number iterated in the function.
  * Return: The number of characters
  */
+
 int printfint(va_list n, int count)
 {
 	int number;
@@ -48,7 +51,7 @@ int printfint(va_list n, int count)
 	else
 		aux = number;
 	if (aux / 10 > 0)
-		intrecursion(aux / 10);
+		count += intrecursion(aux / 10);
 	count += _putchar((aux % 10) + '0');
 	return (count);
 }
@@ -57,11 +60,17 @@ int printfint(va_list n, int count)
  * @n: is the number passed form printfint function.
  * Return: The number of characters
  */
+
 int intrecursion(unsigned int n)
 {
-	int count = 0;
+	int count;
 
 	if (n / 10 > 0)
-		count += intrecursion(n / 10);
-	return (_putchar((n % 10) + '0') + count);
+	{
+		count = intrecursion(n / 10);
+		_putchar((n % 10) + '0');
+		return (count + 1);
+	}
+	_putchar((n % 10) + '0');
+	return (1);
 }
