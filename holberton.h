@@ -16,7 +16,6 @@ typedef struct op
 	int (*func)(va_list, int);
 } data_t;
 
-int _putchar(char c);
 int printfchar(va_list, int a);
 int printfstring(va_list, int a);
 int _printf(const char *format, ...);
