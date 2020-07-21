@@ -8,11 +8,20 @@
 int printf_valid(const char *format)
 {
 	int i;
+	int counter = 1;
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == '\0')
-			return (0);
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			while (format[i + 1] == '%')
+			{
+				counter++;
+				i++;
+			}
+			if (printf_struct(format[i + 1]))
+				return (0);
+		}
 	}
 	return (1);
 }
