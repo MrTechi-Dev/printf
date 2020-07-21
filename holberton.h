@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 /**
  * struct op - shows which function corresponds to the letter.
  * @data: char that indicates the type of data to print.

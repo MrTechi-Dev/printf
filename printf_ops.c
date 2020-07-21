@@ -8,7 +8,12 @@
 
 int printfchar(va_list c, int count)
 {
-	_putchar(va_arg(c, int));
+	int aux;
+	int *ptr;
+
+	aux = va_arg(c, int);
+	ptr = &aux;
+	write(1, ptr, 1);
 	return (++count);
 }
 /**
@@ -22,13 +27,15 @@ int printfstring(va_list str, int count)
 {
 	int i;
 	char *ptr;
+	char *aux;
 
 	ptr = va_arg(str, char *);
 	if (ptr == NULL)
 		ptr = "(null)";
 	for (i = 0; ptr[i] != '\0'; i++, count++)
 	{
-		_putchar(ptr[i]);
+		aux = &ptr[i];
+		write(1, aux, 1);
 	}
 	return (count);
 }
