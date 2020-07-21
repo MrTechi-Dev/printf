@@ -39,38 +39,24 @@ int printfstring(va_list str, int count)
 
 int printfint(va_list n, int count)
 {
-	int number;
-	int aux;
+	int number, length = 0, aux = 1, i;
 
 	number = va_arg(n, int);
 	if (number < 0)
 	{
-		aux = -number;
 		count += _putchar('-');
+		number = number * (-1);
 	}
-	else
-		aux = number;
-	if (aux / 10 > 0)
-		count += intrecursion(aux / 10);
-	count += _putchar((aux % 10) + '0');
-	return (count);
-}
-/**
- * intrecursion - It will print the number in for recurcion.
- * @n: is the number passed form printfint function.
- * Return: The number of characters
- */
-
-int intrecursion(unsigned int n)
-{
-	int count;
-
-	if (n / 10 > 0)
+	while (number / aux >= 10)
 	{
-		count = intrecursion(n / 10);
-		_putchar((n % 10) + '0');
-		return (count + 1);
+		length++;
+		aux = aux * 10;
 	}
-	_putchar((n % 10) + '0');
-	return (1);
+	for (i = 0; i <= length; i++)
+	{
+		count += _putchar((number / aux) + '0');
+		number = number % aux;
+		aux = aux / 10;
+	}
+	return (count);
 }
