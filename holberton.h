@@ -19,6 +19,8 @@ typedef struct op
 int _putchar(char c);
 int printfchar(va_list, int a);
 int printfstring(va_list, int a);
+int printfint(va_list, int a);
+int intrecursion(unsigned int aux);
 int _printf(const char *format, ...);
 int printf_valid(const char *format);
 int (*printf_struct(char s))(va_list, int);

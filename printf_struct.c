@@ -11,6 +11,8 @@ int (*printf_struct(char s))(va_list, int)
 	data_t ops[] = {
 		{"c", printfchar},
 		{"s", printfstring},
+		{"i", printfint},
+		{"d", printfint},
 		{NULL, NULL}
 	};
 
