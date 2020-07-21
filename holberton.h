@@ -23,5 +23,6 @@ int printfint(va_list, int a);
 int _printf(const char *format, ...);
 int printf_valid(const char *format);
 int (*printf_struct(char s))(va_list, int);
+int print_rot(va_list args, int num);
 
 #endif
