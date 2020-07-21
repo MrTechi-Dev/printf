@@ -1,4 +1,4 @@
-.TH man 1_PRINTF "21 JULY 2020" "Holberton School Colombia"
+.TH man 3_PRINTF "21 JULY 2020" "Holberton School Colombia"
 .SH NAME
 .B _Printf
 - _Printf The functions in the _printf family produce output according to a format as described below.
