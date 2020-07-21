@@ -24,6 +24,5 @@ int intrecursion(unsigned int aux);
 int _printf(const char *format, ...);
 int printf_valid(const char *format);
 int (*printf_struct(char s))(va_list, int);
-int printrot13(va_list args);
 
 #endif
