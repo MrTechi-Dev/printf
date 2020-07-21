@@ -10,10 +10,12 @@ int printf_valid(const char *format)
 	int i;
 	int counter = 1;
 
+	if (format == NULL)
+		return (0);
+	if (format[0] == '%' && format[1] == '\0')
+		return (0);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == '\0')
-			return (0);
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			while (format[i + 1] == '%')
