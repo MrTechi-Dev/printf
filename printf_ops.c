@@ -43,10 +43,7 @@ int printfint(va_list n, int count)
 
 	number = va_arg(n, int);
 	if (number < 0)
-	{
 		count += _putchar('-');
-		number = number * (-1);
-	}
 	while (number / aux >= 10)
 	{
 		length++;
@@ -54,7 +51,10 @@ int printfint(va_list n, int count)
 	}
 	for (i = 0; i <= length; i++)
 	{
-		count += _putchar((number / aux) + '0');
+		if (number < 0)
+			count += _putchar(-(number / aux) + '0');
+		else
+			count += _putchar((number / aux) + '0');
 		number = number % aux;
 		aux = aux / 10;
 	}
