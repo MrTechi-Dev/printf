@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 
 	if ((format[0] == '%' && format[1] == '\0')
-		|| format == NULL || !printf_valid(format))
+		|| format == NULL)
 		return (-1);
 	va_start(valist, format);
 	for (i = 0; format[i] != '\0';  i++)
@@ -33,12 +33,12 @@ int _printf(const char *format, ...)
 				if (ptr)
 				{
 					count = ptr(valist, count);
+					i++;
 				}
 				else
 				{
 					count += _putchar(format[i]);
 				}
-				i++;
 			}
 		}
 	}
