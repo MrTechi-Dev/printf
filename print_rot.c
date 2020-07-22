@@ -24,8 +24,7 @@ int print_rot(va_list args, int num)
 			if (s[i] == az[j])
 			{
 				temp = rot13[j];
-				_putchar(temp);
-				num += 1;
+				num = num + _putchar(temp);
 				break;
 			}
 			j++;
@@ -33,8 +32,7 @@ int print_rot(va_list args, int num)
 		i++;
 		if (!(s[i] > 64 && s[i] < 91) && !(s[i] > 96 && s[i] < 123))
 		{
-			_putchar(s[i]);
-			num += 1;
+			num = num + _putchar(s[i]);
 		}
 	}
 	return (num - 1);
