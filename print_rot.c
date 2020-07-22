@@ -7,14 +7,14 @@
 */
 int print_rot(va_list args, int num)
 {
-	int i = 0;
-	int j = 0;
-	char temp;
-	char *s = va_arg(args, char *);
-
+	int i = 0, j = 0;
+	char *s;
 	char az[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	s = va_arg(args, char *);
+	if (s == NULL)
+		s = "(ahyy)";
 	while (s[i] != '\0')
 	{
 		j = 0;
@@ -22,19 +22,17 @@ int print_rot(va_list args, int num)
 		{
 			if (s[i] == az[j])
 			{
-				temp = rot13[j];
-				_putchar(temp);
-				num += 1;
+				num += _putchar(rot13[j]);
+				break;
+			}
+			if (s[i] < 65 || (s[i] > 90 && s[i] < 97) || s[i] > 122)
+			{
+				num += _putchar(s[i]);
 				break;
 			}
 			j++;
 		}
 		i++;
-		if (!(s[i] > 64 && s[i] < 91) && !(s[i] > 96 && s[i] < 123))
-		{
-			_putchar(s[i]);
-			num += 1;
-		}
 	}
-	return (num - 1);
+	return (num);
 }
