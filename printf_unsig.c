@@ -7,12 +7,12 @@
  */
 int printf_unsig(va_list args, int count)
 {
-	unsigned int number;
+	long int number;
 	int i;
 	int length = 0;
 	int aux = 1;
 
-	number = va_arg(args, unsigned int);
+	number = va_arg(args, int);
 	if (number < 0)
 		number = 4294967296 + number;
 	while (number / aux >= 10)
