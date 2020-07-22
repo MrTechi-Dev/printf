@@ -18,6 +18,7 @@ int (*printf_struct(char s))(va_list, int)
 		{"u", printf_unsig},
 		{"x", printf_hexa},
 		{"X", printf_mhexa},
+		{"o", printf_octal},
 		{NULL, NULL}
 	};
 
