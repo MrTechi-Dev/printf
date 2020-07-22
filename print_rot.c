@@ -10,11 +10,12 @@ int print_rot(va_list args, int num)
 	int i = 0;
 	int j = 0;
 	char temp;
-	char *s = va_arg(args, char *);
+	char *s;
 
 	char az[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	s = va_arg(args, char *);
 	while (s[i] != '\0')
 	{
 		j = 0;
