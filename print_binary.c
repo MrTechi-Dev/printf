@@ -7,22 +7,22 @@
 */
 int print_binary(va_list n, int count)
 {
-	int i, length = 0;
-	int number, value;
+	int i, length = 0, value;
+	int number;
 	int *ptr;
 
 	number = va_arg(n, int);
-	if (number == 0)
-		return (0);
+	if (number <= 0)
+		exit(8);
+	ptr = malloc(33 * sizeof(int));
+	if (!ptr)
+		exit(8);
 	value = number;
 	while (value > 0)
 	{
 		value = value / 2;
 		length++;
 	}
-	ptr = malloc(length * sizeof(int));
-	if (!ptr)
-		exit(8);
 	for (i = 0; number > 0; i++)
 	{
 		ptr[i] = number % 2;
