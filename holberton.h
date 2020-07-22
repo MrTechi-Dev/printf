@@ -26,5 +26,7 @@ int printfint(va_list, int a);
 int print_rot(va_list args, int num);
 int print_binary(va_list n, int count);
 int printf_unsig(va_list args, int count);
+int printf_mhexa(va_list args, int count);
+int printf_hexa(va_list args, int count);
 
 #endif

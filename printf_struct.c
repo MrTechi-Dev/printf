@@ -16,6 +16,8 @@ int (*printf_struct(char s))(va_list, int)
 		{"R", print_rot},
 		{"b", print_binary},
 		{"u", printf_unsig},
+		{"x", printf_hexa},
+		{"X", printf_mhexa},
 		{NULL, NULL}
 	};
 
