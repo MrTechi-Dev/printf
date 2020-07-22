@@ -7,7 +7,7 @@
  */
 int printf_unsig(va_list args, int count)
 {
-	long unsigned int number;
+	unsigned int number;
 	int i;
 	int length = 0;
 	int aux = 1;
