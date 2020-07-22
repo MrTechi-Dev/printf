@@ -12,6 +12,8 @@ int print_binary(va_list n, int count)
 	int *ptr;
 
 	number = va_arg(n, int);
+	if (number == 0)
+		return (0);
 	value = number;
 	while (value > 0)
 	{
@@ -19,8 +21,8 @@ int print_binary(va_list n, int count)
 		length++;
 	}
 	ptr = malloc(length * sizeof(int));
-	if (ptr == NULL)
-		return (0);
+	if (!ptr)
+		exit(8);
 	for (i = 0; number > 0; i++)
 	{
 		ptr[i] = number % 2;
