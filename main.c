@@ -10,8 +10,8 @@
  */
 int main(void)
 {
-	printf("%d\n", _printf("%R\n", NULL));
+	int x;
+
+	printf("%d\n", printf("%d\n", 'H'));
 	return (0);
 }
-
-
