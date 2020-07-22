@@ -11,9 +11,8 @@ int printf_octal(va_list args, int count)
 	int i;
 	int j;
 	int octalNumber[100];
-	int counter;
 
-	n = va_arg(args, int);
+	n = va_arg(args, unsigned int);
 	i = 0;
 	while (n != 0)
 	{
