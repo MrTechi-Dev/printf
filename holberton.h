@@ -30,6 +30,7 @@ int printf_mhexa(va_list args, int count);
 int printf_hexa(va_list args, int count);
 int printf_octal(va_list args, int count);
 int printf_string_new(va_list args, int count);
+int printf_pointer(va_list args, int count);
 int hexa_string(char c);
 
 #endif

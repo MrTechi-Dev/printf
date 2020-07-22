@@ -20,6 +20,7 @@ int (*printf_struct(char s))(va_list, int)
 		{"X", printf_mhexa},
 		{"o", printf_octal},
 		{"S", printf_string_new},
+		{"p", printf_pointer},
 		{NULL, NULL}
 	};
 
