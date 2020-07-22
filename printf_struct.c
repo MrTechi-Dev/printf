@@ -14,6 +14,7 @@ int (*printf_struct(char s))(va_list, int)
 		{"i", printfint},
 		{"d", printfint},
 		{"R", print_rot},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 
