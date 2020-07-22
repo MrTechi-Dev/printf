@@ -30,7 +30,7 @@ int printf_pointer(va_list args, int count)
 			array[j] = 87 + aux;
 		number = number / 16;
 	}
-	count += _putchar(92);
+	count += _putchar('0');
 	count += _putchar('x');
 	for (i = j - 1; i >= 0; i--)
 		count += _putchar(array[i]);
