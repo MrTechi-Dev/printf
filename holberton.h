@@ -1,6 +1,5 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-#define SIZE 2048
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -30,5 +29,7 @@ int printf_unsig(va_list args, int count);
 int printf_mhexa(va_list args, int count);
 int printf_hexa(va_list args, int count);
 int printf_octal(va_list args, int count);
+int printf_string_new(va_list args, int count);
+int hexa_string(char c);
 
 #endif
