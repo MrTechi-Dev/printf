@@ -17,17 +17,13 @@ typedef struct op
 } data_t;
 
 int _putchar(char c);
+int _printf(const char *format, ...);
+int printf_valid(const char *format);
+int (*printf_struct(char s))(va_list, int);
 int printfchar(va_list, int a);
 int printfstring(va_list, int a);
 int printfint(va_list, int a);
 int print_rot(va_list args, int num);
 int print_binary(va_list n, int count);
-int _printf(const char *format, ...);
-int printf_valid(const char *format);
-int (*printf_struct(char s))(va_list, int);
-int printf_unsign(va_list args, int count);
-int printf_octal(va_list args, int count);
-int printf_mhexa(va_list args, int count);
-int printf_hexa(va_list args, int count);
 
 #endif
