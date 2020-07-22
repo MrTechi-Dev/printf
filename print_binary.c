@@ -9,11 +9,11 @@ int print_binary(va_list n, int count)
 {
 	int i, j;
 	unsigned int number;
-	unsigned int array[31];
+	unsigned int array[30];
 
-	number = va_arg(n, int);
-	if (number <= 0)
-		count += _putchar('0');
+	number = va_arg(n, unsigned int);
+	if (number < 2)
+		count += _putchar(number + '0');
 	else
 	{
 		for (j = 0; number > 0; j++)
@@ -21,7 +21,6 @@ int print_binary(va_list n, int count)
 			array[j] = number % 2;
 			number = number / 2;
 		}
-		array[j] = number % 2;
 		for (i = j - 1; i >= 0; i--)
 			count += _putchar(array[i] + '0');
 	}
