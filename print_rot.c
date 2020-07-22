@@ -8,7 +8,7 @@
 int print_rot(va_list args, int num)
 {
 	int i = 0;
-	int j = 0;
+	int j;
 	char temp;
 	char *s;
 
