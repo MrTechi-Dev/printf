@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0, (*ptr)(va_list, int), aux;
 	va_list valist;
-	
+
 	if (!printf_valid(format))
 		return (-1);
 	va_start(valist, format);

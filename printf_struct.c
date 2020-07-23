@@ -3,7 +3,8 @@
 /**
  * printf_struct - Indicates the function to follow according
  * the structure
- * @s: Is char after the symbol "%"
+ * @s: Is the string  send from the function _printf
+ * @index: is the position after % symbol in the string
  * Return: the data to the function to process
  */
 int (*printf_struct(const char *s, int index))(va_list, int)
@@ -25,11 +26,11 @@ int (*printf_struct(const char *s, int index))(va_list, int)
 	};
 	int i = 0;
 
-	if (s[index] == '+' || s[index] == ' ' || s[index] == '#' || 
+	if (s[index] == '+' || s[index] == ' ' || s[index] == '#' ||
 		s[index] == 'h' || s[index] == 'l')
 	{
 		i = 6;
-		index++; 
+		index++;
 	}
 	while (ops[i].data)
 	{
