@@ -6,29 +6,34 @@
  * @s: Is char after the symbol "%"
  * Return: the data to the function to process
  */
-int (*printf_struct(char s))(va_list, int)
+int (*printf_struct(const char *s, int index))(va_list, int)
 {
 	data_t ops[] = {
 		{"c", printfchar},
 		{"s", printfstring},
-		{"i", printfint},
-		{"d", printfint},
 		{"R", print_rot},
 		{"b", print_binary},
+		{"S", printf_string_new},
+		{"p", printf_pointer},
+		{"d", printfint},
+		{"i", printfint},
 		{"u", printf_unsig},
 		{"x", printf_hexa},
 		{"X", printf_mhexa},
 		{"o", printf_octal},
-		{"S", printf_string_new},
-		{"p", printf_pointer},
 		{NULL, NULL}
 	};
-
 	int i = 0;
 
+	if (s[index] == '+' || s[index] == ' ' || s[index] == '#' || 
+		s[index] == 'h' || s[index] == 'l')
+	{
+		i = 6;
+		index++; 
+	}
 	while (ops[i].data)
 	{
-		if (ops[i].data[0] == s)
+		if (ops[i].data[0] == s[index])
 			return (ops[i].func);
 		i++;
 	}

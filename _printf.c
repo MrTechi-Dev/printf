@@ -7,11 +7,9 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	int count = 0;
-	int (*ptr)(va_list, int);
+	int i, count = 0, (*ptr)(va_list, int), aux;
 	va_list valist;
-
+	
 	if (!printf_valid(format))
 		return (-1);
 	va_start(valist, format);
@@ -28,9 +26,14 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				ptr = printf_struct(format[i + 1]);
+				ptr = printf_struct(format, (i + 1));
 				if (ptr)
 				{
+					aux = (printf_conditions(format, (i + 1)));
+					if (aux)
+						i++;
+					if (aux == 1)
+						count += _putchar(format[i]);
 					count = ptr(valist, count);
 					i++;
 				}

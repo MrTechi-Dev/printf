@@ -19,7 +19,7 @@ typedef struct op
 int _putchar(char c);
 int _printf(const char *format, ...);
 int printf_valid(const char *format);
-int (*printf_struct(char s))(va_list, int);
+int (*printf_struct(const char *s, int index))(va_list, int);
 int printfchar(va_list, int a);
 int printfstring(va_list, int a);
 int printfint(va_list, int a);
@@ -32,5 +32,6 @@ int printf_octal(va_list args, int count);
 int printf_string_new(va_list args, int count);
 int printf_pointer(va_list args, int count);
 int hexa_string(char c);
+int printf_conditions(const char *s, int index);
 
 #endif
