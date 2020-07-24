@@ -49,7 +49,7 @@ printf format string refers to a control parameter used by a class of functions 
 ---
 ## :earth_americas: Resources  
 ---
-<h2 align="center"> The secrets of printf 
+<h2 align="center">
  <a href="https://www.cypress.com/file/54761/download" rel="nofollow">The Secrets of printf </h2> </a>
 
 ---
