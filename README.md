@@ -51,6 +51,8 @@ printf format string refers to a control parameter used by a class of functions 
 ---
 <h2 align="left"> The secrets of printf </h2>
  <a href="https://www.cypress.com/file/54761/download" target="_blank">
+ 
+## :earth_americas
 ---
 ---
 <h1 align="center">Low-level programming & Algorithm </h1>
