@@ -49,10 +49,9 @@ printf format string refers to a control parameter used by a class of functions 
 ---
 ## :earth_americas: Resources  
 ---
-<h2 align="center"> The secrets of printf </h2>
- <a href="https://www.cypress.com/file/54761/download" rel="nofollow">The Secrets of printf</a>
-## 
----
+<h2 align="center"> The secrets of printf 
+ <a href="https://www.cypress.com/file/54761/download" rel="nofollow">The Secrets of printf </h2> </a>
+
 ---
 <h1 align="center">Low-level programming & Algorithm </h1>
 
