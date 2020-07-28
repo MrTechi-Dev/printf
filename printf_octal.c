@@ -22,5 +22,5 @@ int printf_octal(va_list args, int count)
 	}
 	for (j = i - 1; j >= 0; j--)
 		count += _putchar(octalNumber[j] + '0');
-	return (count -1);
+	return (count - 1);
 }
